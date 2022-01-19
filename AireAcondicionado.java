@@ -11,25 +11,52 @@ public class AireAcondicionado
     private double temperatura;
     private double subirTemperatura;
     private double bajarTemperatura;
+    private double min;
+    private double max;
+    private double incremento;
 
     /**
      * Constructor for objects of class AireAcondicionado
      */
     public AireAcondicionado (){
         temperatura = 15.0;
-        subirTemperatura = 5.0;
-        bajarTemperatura = 5.0;
+        subirTemperatura = incremento;
+        bajarTemperatura = incremento;
+        incremento = 5.0;
+    }
+    
+    public double getmin (){
+        return min;
+    }
+    
+    public double getmax (){
+        return max;
     }
     
     public void subirTemperatura (){
-        temperatura = temperatura + subirTemperatura;
+        if (max >= subirTemperatura){
+            temperatura = temperatura + subirTemperatura;
+        }
+        else {
+        }
     }
-    
     public void bajarTemperatura (){
-        temperatura = temperatura - bajarTemperatura;
+        if (min >= bajarTemperatura){
+            temperatura = temperatura + bajarTemperatura;
+        }
+        else {
+        }
     }
     
     public double getTemperatura (){
         return temperatura;
+    }
+    
+    public void setIncremento (double nuevoIncremento){
+        if (incremento <= 0) {
+            incremento = nuevoIncremento;
+        }
+        else {
+        }
     }
 }
